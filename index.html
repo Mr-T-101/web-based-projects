@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Star Wars Weather</title>
+        <link src="index.css" rel="text/stylesheet">
+    </head>
+    <body>
+        <header>
+        <section id="title">
+            <h1>This is StarWars Weather</h1>
+            <h3>This project was inspired by Tom Scott (Link to Youtube page below).</h3>
+        </section>
+        <section id="weather">
+            <div id="nav">
+                <div id="locate">
+                    <div id="container">
+                        <form id="location-form">
+                         <label for="location">Location (eg. London,uk):</label>
+                         <input type="text" id="location" name="location" required>
+                         <button type="button" form="location-form" formnovalidate>Let's Go!</button>
+                        </form>
+                    </div>
+                </div>
+        </header>
+        <main>
+                <div id="output">
+                    
+                </div>
+            </div>
+        </section>
+        </main>
+        <section id="footer">
+            <footer>
+                <!-- Shows who made the website, the orginial and links -->
+                <h4>Made with love by Tom</h4>
+                <h4><a href="https://tom-s-amazing-projects.web.app">My Website</a></h4>
+                <h4><a href="https://www.youtube.com/channel/UCBa659QWEk1AI4Tg--mrJ2A">Tom Scott's Channel</a></h4>
+                <h4>Written in HTML, CSS, and JavaScript</h4>
+                <h4>2.03.2022</h4>
+                <h4>Copyright Disclaimer</h4>
+                <p>
+                   All copyrighted pictures on this page are used under the <a href="https://www.alrc.gov.au/publication/genes-and-ingenuity-gene-patenting-and-human-health-alrc-report-99/28-copyright-and-databases/copyright-law/#:~:text=The%20Copyright%20Act%201968%20(Cth,subject%20matter%20other%20than%20works.">Australian Copyright Act 1968</a>, 
+                   allowance is made for fair dealing for purposes such as criticism or review, research or study,
+                   parody or satire, reporting news, enabling a disabled person to access the material, or by professional advice by a lawyer,
+                   patent attorney, or trade mark attorney.
+                   
+                </p>
+            </footer>
+        </section>
+    </body>
+    <section id="script">
+     <!-- Fetches api data and prints them to the console -->
+     <script type="text/JavaScript">
+        async function fetchAPIData(e) {
+         e.preventDefault();
+         const locationInput = document.getElementById("location");
+         
+         const { value } = locationInput
+         const endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${value}&APPID=cd8fe1406cdc0e8d99f3e767ce8d76fc`;
+         // do the URL Request
+         const response = await fetch(endpoint);
+
+         // If it's ok parse the data and update the DOM
+         // otherwise throw an error
+         if (response.ok) {
+             var data = await response.json();
+             console.log(data)
+             function drawWeather( d ) {
+                 let temp = d.main.temp;
+                 let feelslike = d.main.feels_like;
+                 const humidity = d.main.humidity;
+                 const clouds = d.weather[0].description;
+                 temp = temp -= 273.15;
+                 feelslike = feelslike -= 273.15;
+                 temp = Math.round(temp)
+                 feelslike = Math.round(feelslike)
+                 temp = temp
+                 feelslike = feelslike
+                 
+                 if (temp >= '46') {
+                     document.getElementById("output").innerHTML = `
+                         <h3>Wowzers thats hot! And stormy!</h3>
+                         <h4>Its like Mustafa</h3>
+                         <img src="https://starwars.fandom.com/wiki/Mustafar?file=Mustafar-Landscape.jpg" height="360" width="199">
+                         <p><a href="https://starwars.fandom.com/wiki/Mustafar">Photo: Wookieepedia</a></p>
+                         <h3>Temp</h3>
+                         <h3>${temp}&deg;c</h3>
+                         <h3>Feels Like</h3>
+                         <h3>${feelslike}&deg;c</h3>
+                         <h3>Humidity</h3>
+                         <h3>${humidity}%</h3>
+                         <h3>Currently</h3>
+                         <h3>${clouds}</h3>
+                        `;
+
+                   } 
+                 else if (temp >= '35' && temp <= '45') {
+                     document.getElementById("output").innerHTML = `
+                         <h3>Very, HOT!!</h3>
+                         <h4>Its like Tatooine</h3>
+                         <img src="https://lumiere-a.akamaihd.net/v1/images/tatooine-main_1633e73f.jpeg?region=164%2C0%2C953%2C536" height="523" width="294">
+                         <p><a href="https://www.starwars.com/databank/tatooine">Photo: Offical Star Wars Website</a></p>
+                         <h3>Temp</h3>
+                         <h3>${temp}&deg;c</h3>
+                         <h3>Feels Like</h3>
+                         <h3>${feelslike}&deg;c</h3>
+                         <h3>Humidity</h3>
+                         <h3>${humidity}%</h3>
+                         <h3>Currently</h3>
+                         <h3>${clouds}</h3>
+                        `;
+                     
+                 } 
+                 else if (temp >= '25' && temp <= '34') {
+                     document.getElementById("output").innerHTML = `
+                         <h3>Nice day for a swim.</h3>
+                         <h4>Its like Scarific out their</h3>
+                         <img src="https://pyxis.nymag.com/v1/imgs/0fd/20f/fb453a06af56a5fc73d462d14bbeba8a6e-scarif-2.w710.jpg" height="231" width="554">
+                         <p><a href="https://www.starwars.com/databank/scarif">Photo: Offical Star Wars Website</a></p>
+                         <h3>Temp</h3>
+                         <h3>${temp}&deg;c</h3>
+                         <h3>Feels Like</h3>
+                         <h3>${feelslike}&deg;c</h3>
+                         <h3>Humidity</h3>
+                         <h3>${humidity}%</h3>
+                         <h3>Currently</h3>
+                         <h3>${clouds}</h3>
+                        `;
+                 }
+                 else if (temp >='15' && temp <= '24') {
+                     document.getElementById("output").innerHTML = `
+                         <h3>Nice and cool.</h3>
+                         <h4>Its like Endor out their</h3>
+                         <img src="https://pyxis.nymag.com/v1/imgs/0ad/c4e/e9fdcc2317f75e4c70fb1db945975a312d-endor-2.2x.w710.jpg" height="275" width="554">
+                         <p><a href="https://www.starwars.com/databank/bright-tree-village">Photo: Offical Star Wars Website</a></p>
+                         <h3>Temp</h3>
+                         <h3>${temp}&deg;c</h3>
+                         <h3>Feels Like</h3>
+                         <h3>${feelslike}&deg;c</h3>
+                         <h3>Humidity</h3>
+                         <h3>${humidity}%</h3>
+                         <h3>Currently</h3>
+                         <h3>${clouds}</h3>
+                        `;
+                 }
+                 else if (temp >= '5' && temp <= '14') {
+                     document.getElementById("output").innerHTML = `
+                         <h3>Bit chilly</h3>
+                         <h4>Its like Ahch-To</h3>
+                         <img src="https://static.wikia.nocookie.net/starwars/images/5/50/Ahch-To_surface.png/revision/latest/scale-to-width-down/1000?cb=20160417060348" height="275" width="554">
+                         <p><a href="https://starwars.fandom.com/wiki/Ahch-To?so=search&file=Ahch-To_surface.png">Photo: Wookieepedia</a></p>
+                         <h3>Temp</h3>
+                         <h3>${temp}&deg;c</h3>
+                         <h3>Feels Like</h3>
+                         <h3>${feelslike}&deg;c</h3>
+                         <h3>Humidity</h3>
+                         <h3>${humidity}%</h3>
+                         <h3>Currently</h3>
+                         <h3>${clouds}</h3>
+                        `;
+
+                 }
+                 else if (temp <= '4') {
+                     document.getElementById("output").innerHTML = `
+                         <h3>Brr it's cold!</h3>
+                         <h4>Its like Hoth out their</h3>
+                         <img src="https://lumiere-a.akamaihd.net/v1/images/Hoth_d074d307.jpeg?region=0%2C0%2C1200%2C675" width="554" height="311">
+                         <p><a href="https://www.starwars.com/databank/hoth">Photo: Offical Star Wars Website</a></p>
+                         <h3>Temp</h3>
+                         <h3>${temp}&deg;c</h3>
+                         <h3>Feels Like</h3>
+                         <h3>${feelslike}&deg;c</h3>
+                         <h3>Humidity</h3>
+                         <h3>${humidity}%</h3>
+                         <h3>Currently</h3>
+                         <h3>${clouds}</h3>
+                        `;
+                 } 
+                 else if (clouds === 'misty' || clouds === 'haze') {
+                     document.getElementById("output").innerHTML = `
+                         <h3>Misty out there</h3>
+                         <h4>Its like Dagobar</h3>
+                         <img src="https://starwarsblog.starwars.com/wp-content/uploads/sites/6/2015/08/Dagobah_890df592.jpeg" height="554" width="312">
+                         <p><a href="https://www.starwars.com/databank/dagobah">Photo: Offical Star Wars Website</a></p>
+                         <h3>Temp</h3>
+                         <h3>${temp}&deg;c</h3>
+                         <h3>Feels Like</h3>
+                         <h3>${feelslike}&deg;c</h3>
+                         <h3>Humidity</h3>
+                         <h3>${humidity}%</h3>
+                         <h3>Currently</h3>
+                         <h3>${clouds}</h3>
+                        `;
+                 } 
+                 else if (clouds === 'heavy intensity rain') {
+                     document.getElementById("output").innerHTML = `
+                         <h3>It's stormy</h3>
+                         <h4>Its like Eadu</h3>
+                         <img src="https://lumiere-a.akamaihd.net/v1/images/eadu-main_7ebaa60a.jpeg?region=0%2C0%2C1560%2C878&width=1536" height="554" width="311">
+                         <p><a href="https://www.starwars.com/databank/eadu">Photo: Offical Star Wars Website</a></p>
+                         <h3>Temp</h3>
+                         <h3>${temp}&deg;c</h3>
+                         <h3>Feels Like</h3>
+                         <h3>${feelslike}&deg;c</h3>
+                         <h3>Humidity</h3>
+                         <h3>${humidity}%</h3>
+                         <h3>Currently</h3>
+                         <h3>${clouds}</h3>
+                        `;
+                 }
+                 else {
+                     document.getElementById("output").innerHTML = `
+                         <h3>Sorry we couldn't find the right planet : ( More coming soon though : )</h3>
+                         <h4>The weather is below though</h4>
+                         <h3>Temp</h3>
+                         <h3>${temp}&deg;c</h3>
+                         <h3>Feels Like</h3>
+                         <h3>${feelslike}&deg;c</h3>
+                         <h3>Humidity</h3>
+                         <h3>${humidity}%</h3>
+                         <h3>Currently</h3>
+                         <h3>${clouds}</h3>
+                        `
+                 }
+             }
+             drawWeather(data);
+         }
+         else {
+         throw new Error('Bad response');
+         }
+
+         }
+         //listens for button on html side and runs fectAPIData()
+         document.addEventListener("DOMContentLoaded", () => {
+             document.querySelector("button[type=button]").addEventListener("click", fetchAPIData);
+      
+         }
+        );
+     </script>
+    <!-- This links the website to Firebase Analytics -->
+     <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyCbPfxcxzM04RCy7TWV4xzpBitShD8PCaE",
+          authDomain: "starwars-weather.firebaseapp.com",
+          projectId: "starwars-weather",
+          storageBucket: "starwars-weather.appspot.com",
+          messagingSenderId: "710609061373",
+          appId: "1:710609061373:web:5565f5880fdfb7b36f4594",
+          measurementId: "G-7YEKD8ML75"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+    </section>
+</html>
