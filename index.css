@@ -1,3 +1,123 @@
 header {
-    background-color: beige;
+    background-color: burlywood;
+    font-size:small;
+    font-family:monospace;
 }
+img {
+    width:100%;
+}
+
+.container {
+    position:relative;
+    text-align:center;
+    color:white;
+}
+
+.titlet {
+    color:white;
+    font-size:xx-large;;
+    font-family:monospace;
+    position:absolute;
+    top:25%;
+    left:50%;
+    transform:translate(-50%,-50%)
+}
+
+.planet {
+    color:white;
+    font-size:xx-large;
+    font-family:monospace;
+    position:absolute;
+    top:50%;
+    left:60%;
+    transform:translate(-60%,-60%)
+
+}
+
+.tempt {
+    color:white;
+    font-size:x-large;
+    font-family:monospace;
+    position:absolute;
+    bottom:30%;
+    left:10%;
+    transform:translate(-10%,-30%)
+}
+
+.temp {
+    color:white;
+    font-size:x-large;
+    font-family:monospace;
+    position:absolute;
+    bottom:25%;
+    left:10%;
+    transform:translate(-10%,-25%)
+}
+
+.feelst {
+    color:white;
+    font-size:x-large;
+    font-family:monospace;
+    position:absolute;
+    bottom:30%;
+    left:30%;
+    transform:translate(-20%,-30%)
+}
+
+.feels {
+    color:white;
+    font-size:x-large;
+    font-family:monospace;
+    position:absolute;
+    bottom:25%;
+    left:30%;
+    transform:translate(-20%,-25%)
+}
+
+.humdt {
+    color:white;
+    font-size:x-large;
+    font-family:monospace;
+    position:absolute;
+    bottom:30%;
+    left:50%;
+    transform:translate(-30%,-30%)
+}
+
+.humd {
+    color:white;
+    font-size:x-large;
+    font-family:monospace;
+    position:absolute;
+    bottom:25%;
+    left:50%;
+    transform:translate(-30%,-25%)
+}
+
+.current {
+    color:white;
+    font-size:x-large;
+    font-family:monospace;
+    position:absolute;
+    bottom:30%;
+    left:70%;
+    transform:translate(-40%,-30%)
+}
+
+.clouds {
+    color:white;
+    font-size:x-large;
+    font-family:monospace;
+    position:absolute;
+    bottom:25%;
+    left:70%;
+    transform:translate(-40%,-25%)
+}
+
+footer {
+    background-color:burlywood;
+    font-size:large;
+    font-family:monospace;
+}
+
+

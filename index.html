@@ -3,25 +3,23 @@
     <head>
         <meta charset="UTF-8">
         <title>Star Wars Weather</title>
-        <link src="index.css" rel="text/stylesheet">
+        <link href="index.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <header>
-        <section id="title">
-            <h1>This is StarWars Weather</h1>
-            <h3>This project was inspired by Tom Scott (Link to Youtube page below).</h3>
-        </section>
-        <section id="weather">
-            <div id="nav">
-                <div id="locate">
-                    <div id="container">
-                        <form id="location-form">
+         <section id="title">
+             <h1>StarWars Weather</h1>
+             <h4>This project was inspired by Tom Scott (Link to Youtube page below).</h4>
+         </section>
+         <section id="weather">
+             <div id="nav">
+                 <div id="locate">
+                     <form id="location-form">
                          <label for="location">Location (eg. London,uk):</label>
                          <input type="text" id="location" name="location" required>
                          <button type="button" form="location-form" formnovalidate>Let's Go!</button>
-                        </form>
-                    </div>
-                </div>
+                     </form>
+                 </div>
         </header>
         <main>
                 <div id="output">
@@ -80,133 +78,149 @@
                  
                  if (temp >= '46') {
                      document.getElementById("output").innerHTML = `
-                         <h3>Wowzers thats hot! And stormy!</h3>
-                         <h4>Its like Mustafa</h3>
-                         <img src="https://starwars.fandom.com/wiki/Mustafar?file=Mustafar-Landscape.jpg" height="360" width="199">
-                         <p><a href="https://starwars.fandom.com/wiki/Mustafar">Photo: Wookieepedia</a></p>
-                         <h3>Temp</h3>
-                         <h3>${temp}&deg;c</h3>
-                         <h3>Feels Like</h3>
-                         <h3>${feelslike}&deg;c</h3>
-                         <h3>Humidity</h3>
-                         <h3>${humidity}%</h3>
-                         <h3>Currently</h3>
-                         <h3>${clouds}</h3>
+                         <div id="container">
+                             <h3 class="titlet">Wowzers thats hot! And stormy!</h3>
+                             <h3 class="planet">Its like Mustafa</h3>
+                             <img src="https://starwars.fandom.com/wiki/Mustafar?file=Mustafar-Landscape.jpg">
+                             <p><a href="https://starwars.fandom.com/wiki/Mustafar">Photo: Wookieepedia</a></p>
+                             <h3 class="tempt">Temp</h3>
+                             <h3 class="temp">${temp}&deg;c</h3>
+                             <h3 class="feelst">Feels Like</h3>
+                             <h3 class="feels">${feelslike}&deg;c</h3>
+                             <h3 class="humdt">Humidity</h3>
+                             <h3 class="humd">${humidity}%</h3>
+                             <h3 class="current">Currently</h3>
+                             <h3 class="clouds">${clouds}</h3>
+                         <div>
                         `;
 
                    } 
                  else if (temp >= '35' && temp <= '45') {
                      document.getElementById("output").innerHTML = `
-                         <h3>Very, HOT!!</h3>
-                         <h4>Its like Tatooine</h3>
-                         <img src="https://lumiere-a.akamaihd.net/v1/images/tatooine-main_1633e73f.jpeg?region=164%2C0%2C953%2C536" height="523" width="294">
-                         <p><a href="https://www.starwars.com/databank/tatooine">Photo: Offical Star Wars Website</a></p>
-                         <h3>Temp</h3>
-                         <h3>${temp}&deg;c</h3>
-                         <h3>Feels Like</h3>
-                         <h3>${feelslike}&deg;c</h3>
-                         <h3>Humidity</h3>
-                         <h3>${humidity}%</h3>
-                         <h3>Currently</h3>
-                         <h3>${clouds}</h3>
+                         <div id="container">
+                             <h3 class="titlet">Very, HOT!!</h3>
+                             <h3 class="planet">Its like Tatooine</h3>
+                             <img src="https://lumiere-a.akamaihd.net/v1/images/tatooine-main_1633e73f.jpeg?region=164%2C0%2C953%2C536">
+                             <p><a href="https://www.starwars.com/databank/tatooine">Photo: Offical Star Wars Website</a></p>
+                             <h3 class="tempt">Temp</h3>
+                             <h3 class="temp">${temp}&deg;c</h3>
+                             <h3 class="feelst">Feels Like</h3>
+                             <h3 class="feels">${feelslike}&deg;c</h3>
+                             <h3 class="humdt">Humidity</h3>
+                             <h3 class="humd">${humidity}%</h3>
+                             <h3 class="current">Currently</h3>
+                             <h3 class="clouds">${clouds}</h3>
+                         </div>
                         `;
                      
                  } 
                  else if (temp >= '25' && temp <= '34') {
                      document.getElementById("output").innerHTML = `
-                         <h3>Nice day for a swim.</h3>
-                         <h4>Its like Scarific out their</h3>
-                         <img src="https://pyxis.nymag.com/v1/imgs/0fd/20f/fb453a06af56a5fc73d462d14bbeba8a6e-scarif-2.w710.jpg" height="231" width="554">
-                         <p><a href="https://www.starwars.com/databank/scarif">Photo: Offical Star Wars Website</a></p>
-                         <h3>Temp</h3>
-                         <h3>${temp}&deg;c</h3>
-                         <h3>Feels Like</h3>
-                         <h3>${feelslike}&deg;c</h3>
-                         <h3>Humidity</h3>
-                         <h3>${humidity}%</h3>
-                         <h3>Currently</h3>
-                         <h3>${clouds}</h3>
+                         <div id="container">
+                             <h3 class="titlet">Nice day for a swim.</h3>
+                             <h3 class="planet">Its like Scarific out there</h3>
+                             <img src="https://pyxis.nymag.com/v1/imgs/0fd/20f/fb453a06af56a5fc73d462d14bbeba8a6e-scarif-2.w710.jpg">
+                             <p><a href="https://www.starwars.com/databank/scarif">Photo: Offical Star Wars Website</a></p>
+                             <h3 class="tempt">Temp</h3>
+                             <h3 class="temp">${temp}&deg;c</h3>
+                             <h3 class="feelst">Feels Like</h3>
+                             <h3 class="feels">${feelslike}&deg;c</h3>
+                             <h3 class="humdt">Humidity</h3>
+                             <h3 class="humd">${humidity}%</h3>
+                             <h3 class="current">Currently</h3>
+                             <h3 class="clouds">${clouds}</h3>
+                         </div>
                         `;
                  }
                  else if (temp >='15' && temp <= '24') {
                      document.getElementById("output").innerHTML = `
-                         <h3>Nice and cool.</h3>
-                         <h4>Its like Endor out their</h3>
-                         <img src="https://pyxis.nymag.com/v1/imgs/0ad/c4e/e9fdcc2317f75e4c70fb1db945975a312d-endor-2.2x.w710.jpg" height="275" width="554">
-                         <p><a href="https://www.starwars.com/databank/bright-tree-village">Photo: Offical Star Wars Website</a></p>
-                         <h3>Temp</h3>
-                         <h3>${temp}&deg;c</h3>
-                         <h3>Feels Like</h3>
-                         <h3>${feelslike}&deg;c</h3>
-                         <h3>Humidity</h3>
-                         <h3>${humidity}%</h3>
-                         <h3>Currently</h3>
-                         <h3>${clouds}</h3>
+                         <div id="container">
+                             <h3 class="titlet">Nice and cool.</h3>
+                             <h3 class="planet">Its like Endor out there</h3>
+                             <img src="https://lumiere-a.akamaihd.net/v1/images/databank_ewokvillage_01_169_e8ae9721.jpeg?region=62%2C0%2C1498%2C843">
+                             <p><a href="https://www.starwars.com/databank/bright-tree-village">Photo: Offical Star Wars Website</a></p>
+                             <h3 class="tempt">Temp</h3>
+                             <h3 class="temp">${temp}&deg;c</h3>
+                             <h3 class="feelst">Feels Like</h3>
+                             <h3 class="feels">${feelslike}&deg;c</h3>
+                             <h3 class="humdt">Humidity</h3>
+                             <h3 class="humd">${humidity}%</h3>
+                             <h3 class="current">Currently</h3>
+                             <h3 class="clouds">${clouds}</h3>
+                         </div>
                         `;
                  }
                  else if (temp >= '5' && temp <= '14') {
                      document.getElementById("output").innerHTML = `
-                         <h3>Bit chilly</h3>
-                         <h4>Its like Ahch-To</h3>
-                         <img src="https://static.wikia.nocookie.net/starwars/images/5/50/Ahch-To_surface.png/revision/latest/scale-to-width-down/1000?cb=20160417060348" height="275" width="554">
-                         <p><a href="https://starwars.fandom.com/wiki/Ahch-To?so=search&file=Ahch-To_surface.png">Photo: Wookieepedia</a></p>
-                         <h3>Temp</h3>
-                         <h3>${temp}&deg;c</h3>
-                         <h3>Feels Like</h3>
-                         <h3>${feelslike}&deg;c</h3>
-                         <h3>Humidity</h3>
-                         <h3>${humidity}%</h3>
-                         <h3>Currently</h3>
-                         <h3>${clouds}</h3>
+                         <div id="container">
+                             <h3 class="titlet">Bit chilly</h3>
+                             <h3 class="planet">Sounds like Ahch-To</h3>
+                             <img src="https://static.wikia.nocookie.net/star-wars-canon/images/d/d6/Ahch-To.png/revision/latest/scale-to-width-down/1000?cb=20160122104005">
+                             <p><a href="https://star-wars-canon.fandom.com/wiki/Ahch-To/Gallery?file=Ahch-To.png">Photo: Wookieepedia</a></p>
+                             <h3 class="tempt">Temp</h3>
+                             <h3 class="temo">${temp}&deg;c</h3>
+                             <h3 class="feelst">Feels Like</h3>
+                             <h3 class="feels">${feelslike}&deg;c</h3>
+                             <h3 class="humdt">Humidity</h3>
+                             <h3 class="humd">${humidity}%</h3>
+                             <h3 class="current">Currently</h3>
+                             <h3 class="clouds">${clouds}</h3>
+                         </div>
                         `;
 
                  }
                  else if (temp <= '4') {
                      document.getElementById("output").innerHTML = `
-                         <h3>Brr it's cold!</h3>
-                         <h4>Its like Hoth out their</h3>
-                         <img src="https://lumiere-a.akamaihd.net/v1/images/Hoth_d074d307.jpeg?region=0%2C0%2C1200%2C675" width="554" height="311">
-                         <p><a href="https://www.starwars.com/databank/hoth">Photo: Offical Star Wars Website</a></p>
-                         <h3>Temp</h3>
-                         <h3>${temp}&deg;c</h3>
-                         <h3>Feels Like</h3>
-                         <h3>${feelslike}&deg;c</h3>
-                         <h3>Humidity</h3>
-                         <h3>${humidity}%</h3>
-                         <h3>Currently</h3>
-                         <h3>${clouds}</h3>
+                         <div id="container">
+                             <h3 class="titlet">Brr it's cold!</h3>
+                             <h3 class="planet">Its like Hoth out there</h3>
+                             <img src="https://lumiere-a.akamaihd.net/v1/images/Hoth_d074d307.jpeg?region=0%2C0%2C1200%2C675">
+                             <p><a href="https://www.starwars.com/databank/hoth">Photo: Offical Star Wars Website</a></p>
+                             <h3 class="tempt">Temp</h3>
+                             <h3 class="temp">${temp}&deg;c</h3>
+                             <h3 class="feelst">Feels Like</h3>
+                             <h3 class="feels">${feelslike}&deg;c</h3>
+                             <h3 class="humdt">Humidity</h3>
+                             <h3 class="humd">${humidity}%</h3>
+                             <h3 class="current">Currently</h3>
+                             <h3 class="clouds">${clouds}</h3>
+                         </div>
                         `;
                  } 
-                 else if (clouds === 'misty' || clouds === 'haze') {
+                 else if (clouds === 'misty' || clouds === 'haze' && clouds === 'light rain') {
                      document.getElementById("output").innerHTML = `
-                         <h3>Misty out there</h3>
-                         <h4>Its like Dagobar</h3>
-                         <img src="https://starwarsblog.starwars.com/wp-content/uploads/sites/6/2015/08/Dagobah_890df592.jpeg" height="554" width="312">
-                         <p><a href="https://www.starwars.com/databank/dagobah">Photo: Offical Star Wars Website</a></p>
-                         <h3>Temp</h3>
-                         <h3>${temp}&deg;c</h3>
-                         <h3>Feels Like</h3>
-                         <h3>${feelslike}&deg;c</h3>
-                         <h3>Humidity</h3>
-                         <h3>${humidity}%</h3>
-                         <h3>Currently</h3>
-                         <h3>${clouds}</h3>
+                         <div id=container>
+                             <h3 class="titlet">Misty out there</h3>
+                             <h3 class="planet">Reminds me of Dagobar</h3>
+                             <img src="https://starwarsblog.starwars.com/wp-content/uploads/sites/6/2015/08/Dagobah_890df592.jpeg">
+                             <p><a href="https://www.starwars.com/databank/dagobah">Photo: Offical Star Wars Website</a></p>
+                             <h3 class="tempt">Temp</h3>
+                             <h3 class="temp">${temp}&deg;c</h3>
+                             <h3 class="feelst">Feels Like</h3>
+                             <h3 class="feels">${feelslike}&deg;c</h3>
+                             <h3 class="humdt">Humidity</h3>
+                             <h3 class="humd">${humidity}%</h3>
+                             <h3 class="current">Currently</h3>
+                             <h3 class="clouds">${clouds}</h3>
+                         </div>
                         `;
                  } 
                  else if (clouds === 'heavy intensity rain') {
                      document.getElementById("output").innerHTML = `
-                         <h3>It's stormy</h3>
-                         <h4>Its like Eadu</h3>
-                         <img src="https://lumiere-a.akamaihd.net/v1/images/eadu-main_7ebaa60a.jpeg?region=0%2C0%2C1560%2C878&width=1536" height="554" width="311">
-                         <p><a href="https://www.starwars.com/databank/eadu">Photo: Offical Star Wars Website</a></p>
-                         <h3>Temp</h3>
-                         <h3>${temp}&deg;c</h3>
-                         <h3>Feels Like</h3>
-                         <h3>${feelslike}&deg;c</h3>
-                         <h3>Humidity</h3>
-                         <h3>${humidity}%</h3>
-                         <h3>Currently</h3>
-                         <h3>${clouds}</h3>
+                         <div id="container">
+                             <h3 class="titlet">It's stormy</h3>
+                             <h3 class="planet">Its like Eadu</h3>
+                             <img src="https://lumiere-a.akamaihd.net/v1/images/eadu-main_7ebaa60a.jpeg?region=0%2C0%2C1560%2C878&width=1536">
+                             <p><a href="https://www.starwars.com/databank/eadu">Photo: Offical Star Wars Website</a></p>
+                             <h3 class="tempt">Temp</h3>
+                             <h3 class="temp">${temp}&deg;c</h3>
+                             <h3 class="feelst">Feels Like</h3>
+                             <h3 class="feels">${feelslike}&deg;c</h3>
+                             <h3 class="humdt">Humidity</h3>
+                             <h3 class="humd">${humidity}%</h3>
+                             <h3 class="current">Currently</h3>
+                             <h3 class="clouds">${clouds}</h3>
+                         </div>
                         `;
                  }
                  else {
