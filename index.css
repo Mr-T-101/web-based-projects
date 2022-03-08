@@ -1,6 +1,8 @@
+ 
 header {
     background-color: burlywood;
-    font-size:small;
+    font-size:larger;
+    color:black;
     font-family:monospace;
 }
 img {
@@ -10,32 +12,32 @@ img {
 .container {
     position:relative;
     text-align:center;
-    color:white;
+    
 }
 
 .titlet {
-    color:white;
+    
     font-size:xx-large;;
     font-family:monospace;
     position:absolute;
-    top:25%;
-    left:50%;
+    top:20%;
+    left:25%;
     transform:translate(-50%,-50%)
 }
 
 .planet {
-    color:white;
+    
     font-size:xx-large;
     font-family:monospace;
     position:absolute;
-    top:50%;
-    left:60%;
-    transform:translate(-60%,-60%)
+    top:40%;
+    left:50%;
+    transform:translate(-50%,-50%)
 
 }
 
 .tempt {
-    color:white;
+    
     font-size:x-large;
     font-family:monospace;
     position:absolute;
@@ -45,7 +47,7 @@ img {
 }
 
 .temp {
-    color:white;
+    
     font-size:x-large;
     font-family:monospace;
     position:absolute;
@@ -55,7 +57,7 @@ img {
 }
 
 .feelst {
-    color:white;
+    
     font-size:x-large;
     font-family:monospace;
     position:absolute;
@@ -65,7 +67,7 @@ img {
 }
 
 .feels {
-    color:white;
+    
     font-size:x-large;
     font-family:monospace;
     position:absolute;
@@ -75,7 +77,7 @@ img {
 }
 
 .humdt {
-    color:white;
+    
     font-size:x-large;
     font-family:monospace;
     position:absolute;
@@ -85,7 +87,7 @@ img {
 }
 
 .humd {
-    color:white;
+    
     font-size:x-large;
     font-family:monospace;
     position:absolute;
@@ -95,7 +97,7 @@ img {
 }
 
 .current {
-    color:white;
+    
     font-size:x-large;
     font-family:monospace;
     position:absolute;
@@ -105,7 +107,7 @@ img {
 }
 
 .clouds {
-    color:white;
+    
     font-size:x-large;
     font-family:monospace;
     position:absolute;
@@ -114,10 +116,23 @@ img {
     transform:translate(-40%,-25%)
 }
 
+.explain {
+
+    font-size:x-large;
+    font-family:monospace;
+    position:absolute;
+    bottom:20%;
+    left:90%;
+    transform:translate(-20%,-90%)
+    
+}
+
 footer {
     background-color:burlywood;
     font-size:large;
+    color:black;
     font-family:monospace;
 }
+
 
 
