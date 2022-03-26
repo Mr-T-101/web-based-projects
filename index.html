@@ -85,7 +85,7 @@
          const locationInput = document.getElementById("location");
          
          const { value } = locationInput
-         const endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${value}&APPID=cd8fe1406cdc0e8d99f3e767ce8d76fc`;
+         const endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${value}&APPID=[my-api-key]`;
          // do the URL Request
          const response = await fetch(endpoint);
 
